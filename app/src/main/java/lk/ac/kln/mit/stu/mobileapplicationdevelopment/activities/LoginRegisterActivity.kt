@@ -9,5 +9,5 @@ class LoginRegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_register)
     }
-    //check git branch
+    //check git branch 2
 }
