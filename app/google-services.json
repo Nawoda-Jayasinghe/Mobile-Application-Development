@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "718514001770",
+    "project_id": "mobile-application-devel-b9b60",
+    "storage_bucket": "mobile-application-devel-b9b60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718514001770:android:27207ed1fb228a15d87713",
+        "android_client_info": {
+          "package_name": "lk.ac.kln.mit.stu.mobileapplicationdevelopment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718514001770-r3okqbcmp6jv7s58qpa8ojfqntjp0gh9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1PhBEcALMzq0TNOVCcogFxVwCDrZUtmw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718514001770-r3okqbcmp6jv7s58qpa8ojfqntjp0gh9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
