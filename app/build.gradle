@@ -10,6 +10,10 @@ android {
     namespace 'lk.ac.kln.mit.stu.mobileapplicationdevelopment'
     compileSdk 33
 
+    buildFeatures{
+        viewBinding=true
+    }
+
     defaultConfig {
         applicationId "lk.ac.kln.mit.stu.mobileapplicationdevelopment"
         minSdk 21
@@ -33,9 +37,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        viewBinding true
-    }
+
 }
 
 dependencies {
