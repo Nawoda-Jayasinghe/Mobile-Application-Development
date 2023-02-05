@@ -14,7 +14,7 @@
         android:layout_height="290dp">
 
         <ImageView
-            android:id="@+id/img_ad"
+            android:id="@+id/imageSpecialRvItem"
             android:layout_width="195dp"
             android:layout_height="146dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -24,7 +24,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/tv_ad_name"
+            android:id="@+id/tvSpecialProductName"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_thin"
@@ -41,7 +41,7 @@
             app:layout_constraintVertical_bias="0.666" />
 
         <TextView
-            android:id="@+id/tv_ad_price"
+            android:id="@+id/tvSpecialProductPrice"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sf_pro_display"
