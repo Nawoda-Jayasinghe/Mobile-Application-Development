@@ -10,6 +10,10 @@ android {
     namespace 'lk.ac.kln.mit.stu.mobileapplicationdevelopment'
     compileSdk 33
 
+    buildFeatures{
+        viewBinding=true
+    }
+
     defaultConfig {
         applicationId "lk.ac.kln.mit.stu.mobileapplicationdevelopment"
         minSdk 21
@@ -33,6 +37,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 }
 
 dependencies {
@@ -46,6 +51,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     apply plugin :"kotlin-kapt"
+
+    //bottom navigation component
+    def nav_version = "2.5.2"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     //loading button
     implementation 'br.com.simplepass:loading-button-android:2.2.0'
@@ -68,5 +78,5 @@ dependencies {
     //Dagger hilt
     implementation "com.google.dagger:hilt-android:2.38.1"
     kapt "com.google.dagger:hilt-compiler:2.38.1"
-
+//    classpath 'com.android.tools.build:gradle:3.6.0-rc01'
 }
