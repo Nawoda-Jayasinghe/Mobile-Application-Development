@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvAppName"
+            style="@style/h4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:drawablePadding="6dp"
+            android:text="Damro Furnitures"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.159" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonRegisterAccountOptions"
+            style="@style/whiteButtonStyle"
+            android:layout_width="@dimen/mediumButtonWidth"
+            android:layout_height="@dimen/mediumButtonHeight"
+            android:stateListAnimator="@null"
+            android:text="Register"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.77" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonLoginAccountOptions"
+            style="@style/blueButtonStyle"
+            android:layout_width="@dimen/mediumButtonWidth"
+            android:layout_height="@dimen/mediumButtonHeight"
+            android:stateListAnimator="@null"
+            android:text="Login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.875" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

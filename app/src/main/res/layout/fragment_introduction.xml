@@ -17,19 +17,19 @@
         app:layout_constraintVertical_bias="0.157"
         app:srcCompat="@drawable/damro" />
 
-    <Button
-        android:id="@+id/btnGetStart"
-        android:layout_width="313dp"
-        android:layout_height="73dp"
-        android:text="View Products"
-        android:textAllCaps="false"
-        android:textSize="24sp"
-        android:textStyle="normal"
-        app:cornerRadius="45dp"
-        android:stateListAnimator="@null"
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/blueButtonStyle"
+        android:layout_width="@dimen/smallButtonWidth"
+        android:layout_height="@dimen/smallButtonHeight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.874" />
+        app:layout_constraintVertical_bias="0.821"
+        android:text="Start"
+        android:stateListAnimator="@null"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
