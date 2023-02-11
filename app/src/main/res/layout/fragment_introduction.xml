@@ -18,6 +18,7 @@
         app:srcCompat="@drawable/damro" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonStart"
         style="@style/blueButtonStyle"
         android:layout_width="@dimen/smallButtonWidth"
         android:layout_height="@dimen/smallButtonHeight"
