@@ -9,10 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.withContext
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.R
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.data.User
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.databinding.FragmentRegisterBinding
+import lk.ac.kln.mit.stu.mobileapplicationdevelopment.util.RegisterValidation
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.util.Resource
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.viewmodel.RegisterViewModel
 
@@ -62,6 +65,29 @@ class RegisterFragment: Fragment() {
                     }
                     else -> Unit
                 }
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.validation.collect{ validation ->
+                if (validation.email is RegisterValidation.Failed){
+                    withContext(Dispatchers.Main){
+                        binding.edEmailRegister.apply {
+                            requestFocus()
+                            error = validation.email.message
+                        }
+                    }
+                }
+
+                if (validation.password is RegisterValidation.Failed){
+                    withContext(Dispatchers.Main){
+                        binding.edPasswordRegister.apply {
+                            requestFocus()
+                            error = validation.password.message
+                        }
+                    }
+                }
+
             }
         }
 
