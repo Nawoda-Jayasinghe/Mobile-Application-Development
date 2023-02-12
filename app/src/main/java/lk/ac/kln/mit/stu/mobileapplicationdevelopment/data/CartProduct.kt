@@ -12,19 +12,3 @@ data class CartProduct(
 ){
     constructor(): this(Product(), 1, null, null)
 }
-
-
-
-
-
-//DetailsViewModel
-
-class DetailViewModel @Inject constructor(
-    private val firestore: FirebaseFirestore,
-    val auth: FirebaseAuth
-): ViewModel(){
-    private  val _addToCrat = MutableStateFlow<Resource<CartProduct>>(Resource.unspecified())
-    val addToCart = _addToCart.asStateFlow()
-
-
-}
