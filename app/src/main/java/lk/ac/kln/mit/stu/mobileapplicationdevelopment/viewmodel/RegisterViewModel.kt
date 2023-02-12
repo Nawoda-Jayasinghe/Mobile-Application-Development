@@ -36,7 +36,7 @@ class RegisterViewModel @Inject constructor(
             }
         firebaseAuth.createUserWithEmailAndPassword(user.email, password)
             .addOnSuccessListener {
-                it.user?.let {
+                it.user?.let { //null check to avoid passing null values
                     saveUserInfo(it.uid, user)
 //                    _register.value = Resource.Success(it)
                 }
