@@ -19,5 +19,13 @@
         android:id="@+id/profileFragment"
         android:name="lk.ac.kln.mit.stu.mobileapplicationdevelopment.fragments.shopping.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout = "@layout/fragment_profile"/>
+        tools:layout = "@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_allOrdersFragment"
+            app:destination="@id/allOrdersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allOrdersFragment"
+        android:name="lk.ac.kln.mit.stu.mobileapplicationdevelopment.fragments.settings.AllOrdersFragment"
+        android:label="AllOrdersFragment" />
 </navigation>
