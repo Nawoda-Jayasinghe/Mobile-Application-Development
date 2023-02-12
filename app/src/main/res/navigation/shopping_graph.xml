@@ -20,4 +20,16 @@
         android:name="lk.ac.kln.mit.stu.mobileapplicationdevelopment.fragments.shopping.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout = "@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/billingFragment"
+        android:name="lk.ac.kln.mit.stu.mobileapplicationdevelopment.fragments.shopping.BillingFragment"
+        android:label="BillingFragment" >
+        <action
+            android:id="@+id/action_billingFragment_to_addressActivity"
+            app:destination="@id/addressActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/addressActivity"
+        android:name="lk.ac.kln.mit.stu.mobileapplicationdevelopment.activities.AddressActivity"
+        android:label="AddressActivity" />
 </navigation>
