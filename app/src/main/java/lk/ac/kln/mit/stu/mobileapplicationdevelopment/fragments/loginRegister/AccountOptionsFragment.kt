@@ -7,26 +7,30 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.R
+import lk.ac.kln.mit.stu.mobileapplicationdevelopment.databinding.FragmentAccountOptionsBinding
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.databinding.FragmentIntroductionBinding
-import lk.ac.kln.mit.stu.mobileapplicationdevelopment.databinding.FragmentLoginBinding
 
-class IntroductionFragment: Fragment(R.layout.fragment_introduction) {
-    private lateinit var binding: FragmentIntroductionBinding
+class AccountOptionsFragment: Fragment(R.layout.fragment_account_options) {
+    private lateinit var binding: FragmentAccountOptionsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentIntroductionBinding.inflate(inflater)
+        binding = FragmentAccountOptionsBinding.inflate(inflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonStart.setOnClickListener{
-            findNavController().navigate(R.id.action_introductionFragment_to_accountOptionsFragment2)
+        binding.buttonLoginAccountOptions.setOnClickListener{
+            findNavController().navigate(R.id.action_accountOptionsFragment_to_loginFragment)
+        }
+
+        binding.buttonRegisterAccountOptions.setOnClickListener{
+            findNavController().navigate(R.id.action_accountOptionsFragment_to_registerFragment)
         }
     }
 }
