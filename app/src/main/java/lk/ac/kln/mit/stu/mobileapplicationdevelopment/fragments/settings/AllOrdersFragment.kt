@@ -8,11 +8,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.resource.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
+import lk.ac.kln.mit.stu.mobileapplicationdevelopment.R
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.adapter.AllOrdersAdapter
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.databinding.FragmentOrdersBinding
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.viewmodel.AllOrdersViewModel
@@ -34,6 +36,7 @@ class AllOrdersFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         setupOrdersRv()
 
