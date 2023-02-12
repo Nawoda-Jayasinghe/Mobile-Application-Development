@@ -26,7 +26,7 @@ class ShoppingActivity : AppCompatActivity() {
         val navController = findNavController(R.id.shoppingHostFragment)
         binding.bottomNavigation.setupWithNavController(navController)
 
-//        reffer to https://www.geeksforgeeks.org/view-binding-with-fragments-in-android-jetpack/ of get back any error in futre
+//        reffer to https://www.geeksforgeeks.org/view-binding-with-fragments-in-android-jetpack/ of get back any error in future
 
     }
 }
