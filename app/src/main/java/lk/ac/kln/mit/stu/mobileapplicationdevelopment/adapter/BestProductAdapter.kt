@@ -1,6 +1,8 @@
 package lk.ac.kln.mit.stu.mobileapplicationdevelopment.adapter
 
+import android.graphics.Paint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
@@ -8,21 +10,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.data.Product
 import lk.ac.kln.mit.stu.mobileapplicationdevelopment.databinding.BestDealsRvItemBinding
-import lk.ac.kln.mit.stu.mobileapplicationdevelopment.databinding.SpecialRvItemBinding
+import lk.ac.kln.mit.stu.mobileapplicationdevelopment.databinding.ProductRvItemBinding
 
-class BestDealsAdapter: RecyclerView.Adapter<BestDealsAdapter.BestDealsViewHolder> (){
+class BestProductAdapter : RecyclerView.Adapter<BestProductAdapter.BestProductsViewHolder>(){
 
-    inner class BestDealsViewHolder(private val binding: BestDealsRvItemBinding): RecyclerView.ViewHolder(binding.root){
+    inner class BestProductsViewHolder(private val binding: ProductRvItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(product: Product){
             binding.apply {
-                Glide.with(itemView).load(product.images[0]).into(imgBestDeal)
+                Glide.with(itemView).load(product.images[0]).into(imgProduct)
                 product.offerPercentage?.let{
                     val remainingPricePercentage = 1f - it
                     val priceAfterOffer = remainingPricePercentage * product.price
                     tvNewPrice.text = "Rs ${String.format("%.2f", priceAfterOffer)}"
+                    tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                 }
-                tvOldPrice.text = "Rs. ${product.price}"
-                tvDealProductName.text = "Rs. ${product.name}"
+                if(product.offerPercentage == null){
+                    tvNewPrice.visibility = View.INVISIBLE
+                }
+                tvPrice.text = "Rs. ${product.price}"
+                tvName.text = product.name
             }
         }
     }
@@ -40,15 +46,15 @@ class BestDealsAdapter: RecyclerView.Adapter<BestDealsAdapter.BestDealsViewHolde
 
     val differ = AsyncListDiffer(this,diffCallback)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestDealsViewHolder {
-        return BestDealsViewHolder(
-            BestDealsRvItemBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestProductsViewHolder {
+        return BestProductsViewHolder(
+            ProductRvItemBinding.inflate(
                 LayoutInflater.from(parent.context)
             )
         )
     }
 
-    override fun onBindViewHolder(holder: BestDealsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BestProductsViewHolder, position: Int) {
         val product = differ.currentList[position]
         holder.bind(product)
 
@@ -57,6 +63,4 @@ class BestDealsAdapter: RecyclerView.Adapter<BestDealsAdapter.BestDealsViewHolde
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
-
-
 }
